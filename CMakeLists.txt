@@ -30,12 +30,8 @@ add_executable(${LAB_NAME}_exe main.cpp)
 target_link_libraries(${LAB_NAME}_exe PRIVATE ${LAB_NAME}_lib)
 
 # Добавление тестов
-# enable_testing()
+enable_testing()
 
-# add_executable(tests_day test/tests_day.cpp)
-# target_link_libraries(tests_day ${LAB_NAME}_lib gtest_main)
-# add_test(NAME DayTests COMMAND tests_day)
-
-# add_executable(tests_fear_check test/tests_fear_check.cpp)
-# target_link_libraries(tests_fear_check ${LAB_NAME}_lib gtest_main)
-# add_test(NAME FearCheckTests COMMAND tests_fear_check)
+add_executable(tests_bit_string test/bit_string_test.cpp)
+target_link_libraries(tests_bit_string ${LAB_NAME}_lib gtest_main)
+add_test(NAME BitStringTests COMMAND tests_day)
