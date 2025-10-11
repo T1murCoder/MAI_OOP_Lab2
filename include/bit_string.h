@@ -16,6 +16,7 @@ public:
 
     BitString add(const BitString& other) const;
     BitString subtract(const BitString& other) const;
+    BitString copy();
 
     BitString bitAnd(const BitString& other) const;
     BitString bitOr(const BitString& other) const;

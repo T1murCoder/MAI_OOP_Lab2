@@ -63,7 +63,7 @@ BitString::~BitString() noexcept {
 // Тут просто складываем массивы и возвращаем новый объект
 BitString BitString::add(const BitString& other) const {
 
-    
+
     return BitString(toString() + other.toString());
 }
 
@@ -81,6 +81,10 @@ BitString BitString::subtract(const BitString& other) const {
     }
     
     return BitString(toString().substr(0, newSize));
+}
+
+BitString BitString::copy() {
+    return BitString(*this);
 }
 
 // Тут ввел ограничение с одинаковой длиной строк для упрощения 

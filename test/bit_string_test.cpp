@@ -54,6 +54,18 @@ TEST(BitStringConstructorTest, MoveConstructor) {
     EXPECT_EQ(moved.toString(), originalStr);
 }
 
+TEST(BitStringMethodTest, CopyMethod) {
+    BitString original("10101");
+    BitString copy = original.copy();
+
+    EXPECT_EQ(copy.getSize(), original.getSize());
+    EXPECT_EQ(copy.toString(), original.toString());
+
+    BitString changedCopy = copy.add(BitString("1"));
+    EXPECT_NE(changedCopy.toString(), original.toString());
+}
+
+
 // Тесты для арифметических операций
 TEST(BitStringOperationsTest, Add) {
     BitString bs1({1, 0, 1});
